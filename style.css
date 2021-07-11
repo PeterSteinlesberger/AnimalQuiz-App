@@ -2,11 +2,11 @@
 body {
     height: 100vh;
     margin: 0px;
-    background-color: rgb(85, 197, 241) !important;
+    background-color: rgb(88, 139, 248)!important;
 }
 
 .cont-main {
-    background-color: rgb(85, 197, 241);
+    background-color: rgb(88, 139, 248);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -20,10 +20,13 @@ body {
     align-items: center;
 }
 .quiz-card {
-  width:  23rem !important;
+  width:  28rem !important;
 }
 .quiz-answer-card :hover {
     cursor: pointer;
     background-color: rgba(0,0,0,0.05);
 
+}
+.bg-success, .bg-danger {
+    color: white;
 }

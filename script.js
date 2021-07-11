@@ -156,7 +156,7 @@ let questions = [
 let currentQuestion = 0;
 
 function init() {
-     document.getElementById('numberQuestions').innerHTML = questions.length;
+     document.getElementById('numberQuestions').innerHTML = questions.length +1;
     showQuestion();
    
 }
@@ -174,17 +174,40 @@ function init() {
 
 function answer(selection) {
     let thisQuestion = questions[currentQuestion];
-    
-    if(selection.slice(-1) == thisQuestion['right_answer']) {
-        console.log("richtig");        
+let idOfRightAnswer = `answer${thisQuestion['right_answer']}`;
+
+if(selection.slice(-1) == thisQuestion['right_answer']) {
+      document.getElementById(selection).parentNode.classList.add('bg-success');    
     }
     else {
-        console.log("falsch");
+        document.getElementById(selection).parentNode.classList.add('bg-danger');
+        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
     }
-    
-
-
+    document.getElementById('nextQuestion').disabled = false;
 }
+
+
+   function nextQuestion() {
+        currentQuestion++;  
+        resetAnswerButtons();  
+        showQuestion();
+        document.getElementById('nextQuestion').disabled = true;
+        let countQuestion = currentQuestion;
+        countQuestion++;
+        document.getElementById('count-question').innerHTML = countQuestion;
+       
+        
+    }  
+
+    function resetAnswerButtons() {
+        for (let i = 1; i < 5; i++) {
+         document.getElementById(`answer${i}`).parentNode.classList.remove('bg-success');
+         document.getElementById(`answer${i}`).parentNode.classList.remove('bg-danger');
+        }
+    }
+
+
+
 
 
 
