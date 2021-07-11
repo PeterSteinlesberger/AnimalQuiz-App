@@ -5,7 +5,8 @@ let questions = [
     "answer_2": "Elefanten",
     "answer_3": "Affen",
     "answer_4": "Schlangen",
-    "right_answer": 3 
+    "right_answer": 3, 
+    "img": "img/animals/affe.jpg"
 },
 {
     "question": "2. Wer gilt als König der Tiere?",
@@ -13,7 +14,8 @@ let questions = [
     "answer_2": "Stinktier",
     "answer_3": "Eisbär",
     "answer_4": "Löwe",
-    "right_answer": 4 
+    "right_answer": 4, 
+    "img": "img/animals/lion.jpg"
 }, 
 {
     "question": "3. Welches Tier rollt sich bei Gefahr zu einer Stachelkugel zusammen?",
@@ -21,7 +23,8 @@ let questions = [
     "answer_2": "Katze",
     "answer_3": "Hund",
     "answer_4": "Ameise",
-    "right_answer": 1 
+    "right_answer": 1, 
+    "img": "img/animals/igel.jpg"
 },  
 {
     "question": "4. Wer kann am weitesten springen?",
@@ -29,7 +32,8 @@ let questions = [
     "answer_2": "Giraffe",
     "answer_3": "Kanguru",
     "answer_4": "Schildkröte",
-    "right_answer":  3
+    "right_answer":  3,
+    "img": "img/animals/kangaroo.jpg"
 },     
 {
     "question": "5. Wie heißen die schwarzweiß gestreiften Verwandten des Pferdes?",
@@ -37,7 +41,8 @@ let questions = [
     "answer_2": "Zebra",
     "answer_3": "Maultiere",
     "answer_4": "Pinguine",
-    "right_answer": 2 
+    "right_answer": 2,
+    "img": "img/animals/zebra.jpg"
 },     
 {
     "question": "6. Welche Raubkatze ist ganz schwarz?",
@@ -45,7 +50,8 @@ let questions = [
     "answer_2": "Löwe",
     "answer_3": "Panter",
     "answer_4": "Puma",
-    "right_answer": 3 
+    "right_answer": 3, 
+    "img": "img/animals/black-panther.jpg"
 },     
 {
     "question": "7. Welches Tier wirft kleine Erdhügel auf Wiesen auf?",
@@ -53,7 +59,8 @@ let questions = [
     "answer_2": "Regenwrum",
     "answer_3": "Hase",
     "answer_4": "Ente",
-    "right_answer": 1 
+    "right_answer": 1, 
+    "img": "img/animals/maulwurf.jpg"
 },     
 {
     "question": "8. Wie groß ist ein Blauwal bei der Geburt?",
@@ -61,7 +68,8 @@ let questions = [
     "answer_2": "3 Meter",
     "answer_3": "5 Meter",
     "answer_4": "7 Meter",
-    "right_answer": 4 
+    "right_answer": 4,
+    "img": "img/animals/wale.jpg" 
 },     
 {
     "question": "9. Wie alt können Esel werden?",
@@ -69,7 +77,8 @@ let questions = [
     "answer_2": "10 Jahre",
     "answer_3": "20 Jahre",
     "answer_4": "30 Jahre",
-    "right_answer": 4 
+    "right_answer": 4,
+    "img": "img/animals/donkey.jpg"
 },     
 {
     "question": "10. Was machen Katzen, wenn sie sich wohlfühlen?",
@@ -77,7 +86,8 @@ let questions = [
     "answer_2": "bellen",
     "answer_3": "schnurren",
     "answer_4": "wädeln mit dem Schwanz",
-    "right_answer": 3
+    "right_answer": 3,
+    "img": "img/animals/cat.jpg"
 },     
 {
     "question": "11. Wie nennt man junge Hausschweine?",
@@ -85,7 +95,8 @@ let questions = [
     "answer_2": "Säue",
     "answer_3": "Widder",
     "answer_4": "Fohlen",
-    "right_answer": 1
+    "right_answer": 1,
+    "img": "img/animals/pig.jpg"
 },     
 {
     "question": "12. Welche Säugetiere sind besonders faul?",
@@ -93,7 +104,8 @@ let questions = [
     "answer_2": "Katzen",
     "answer_3": "Faultiere",
     "answer_4": "Erdmännchen",
-    "right_answer": 3
+    "right_answer": 3,
+    "img": "img/animals/faultier.jpg"
 },     
 {
     "question": "13. Wie weit können die größten Kängurus springen?",
@@ -101,7 +113,8 @@ let questions = [
     "answer_2": "4 Meter",
     "answer_3": "2 Meter",
     "answer_4": "13 Meter",
-    "right_answer": 4 
+    "right_answer": 4,
+    "img": "img/animals/kanguru.jpg" 
 },     
 {
     "question": "14. Wer gräbt Gänge in die Erde?",
@@ -109,7 +122,8 @@ let questions = [
     "answer_2": "Hase",
     "answer_3": "Frosch",
     "answer_4": "Huhn",
-    "right_answer": 2 
+    "right_answer": 2,
+    "img": "img/animals/rabbit.jpg" 
 },     
 {
     "question": "15. Wie schnell kann ein Gepard rennen?",
@@ -117,7 +131,8 @@ let questions = [
     "answer_2": "60 km/h",
     "answer_3": "100 km/h",
     "answer_4": "45 km/h",
-    "right_answer": 1
+    "right_answer": 1,
+    "img": "img/animals/cheetah.jpg"
 },     
 {
     "question": "2. Wer gilt als König der Tiere?",
@@ -125,7 +140,8 @@ let questions = [
     "answer_2": "Nashorn",
     "answer_3": "Löwe",
     "answer_4": "Haifisch",
-    "right_answer": 3 
+    "right_answer": 3,
+    "img": "img/animals/lion.jpg" 
 },    
 {
     "question": "16. Welches Tier verbreitet manchmal schrecklichen Gestank?",
@@ -133,7 +149,8 @@ let questions = [
     "answer_2": "Stinktier",
     "answer_3": "Fisch",
     "answer_4": "Affe",
-    "right_answer": 2 
+    "right_answer": 2,
+    "img": "img/animals/skunk.jpg" 
 },    
 {
     "question": "17. Welches Tier schläft mit dem Kopf nach unten?",
@@ -141,7 +158,8 @@ let questions = [
     "answer_2": "Eichhörnchen",
     "answer_3": "Wildschwein",
     "answer_4": "Fledermaus",
-    "right_answer": 4
+    "right_answer": 4,
+    "img": "img/animals/flying-foxes.jpg"
 },    
 {
     "question": "18. Wieviele Mägen hat die Kuh?",
@@ -149,7 +167,8 @@ let questions = [
     "answer_2": "1",
     "answer_3": "2",
     "answer_4": "4",
-    "right_answer": 1 
+    "right_answer": 1,
+    "img": "img/animals/cow.jpg" 
 }  
 ];
 
@@ -163,7 +182,12 @@ function init() {
 
 
  function showQuestion() {
-    let thisQuestion = questions[currentQuestion];
+if(currentQuestion >= questions.length) {
+    document.getElementById('endscreen').style = '';
+    document.getElementById('questionBody').style = 'display: none';
+        
+} else {
+let thisQuestion = questions[currentQuestion];
        document.getElementById('questionText').innerHTML = thisQuestion['question'];
        document.getElementById('answer1').innerHTML = thisQuestion['answer_1'];
        document.getElementById('answer2').innerHTML = thisQuestion['answer_2'];
@@ -171,6 +195,7 @@ function init() {
        document.getElementById('answer4').innerHTML = thisQuestion['answer_4'];
 }
 
+ }
 
 function answer(selection) {
     let thisQuestion = questions[currentQuestion];
@@ -195,8 +220,6 @@ if(selection.slice(-1) == thisQuestion['right_answer']) {
         let countQuestion = currentQuestion;
         countQuestion++;
         document.getElementById('count-question').innerHTML = countQuestion;
-       
-        
     }  
 
     function resetAnswerButtons() {
