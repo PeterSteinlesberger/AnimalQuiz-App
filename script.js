@@ -186,8 +186,8 @@ function showQuestion() {
     if (currentQuestion >= questions.length) {
         document.getElementById('endscreen').style = '';
         document.getElementById('questionBody').style = 'display: none';
-        endResult();
-
+       endResult();
+       
     } else {
         let thisQuestion = questions[currentQuestion];
         document.getElementById('questionText').innerHTML = thisQuestion['question'];
@@ -231,12 +231,13 @@ function resetAnswerButtons() {
         document.getElementById(`answer${i}`).parentNode.classList.remove('bg-success');
         document.getElementById(`answer${i}`).parentNode.classList.remove('bg-danger');
     }
-    document.getElementById('img-main').innerHTML = '<img src="img/quiz-2058883_1280.png" class="card-img-top">';
+    document.getElementById('img-main').innerHTML = '<img id="img-top" src="img/quiz-2058883_1280.png" class="card-img-top">';
 }
 
 function endResult() {
     document.getElementById('rightAnswers').innerHTML = rightAnswers;
     document.getElementById('allQuestions').innerHTML = questions.length;
+    document.getElementById('img-top').src = 'img/animals/win';  
 }
 
 
