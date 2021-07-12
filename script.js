@@ -182,13 +182,18 @@ function init() {
 }
 
 
-function showQuestion() {
+function showQuestion() {  //Show endscreen
     if (currentQuestion >= questions.length) {
         document.getElementById('endscreen').style = '';
         document.getElementById('questionBody').style = 'display: none';
        endResult();
-       
-    } else {
+       document.getElementById('img-top').src = 'img/animals/win.png';
+       document.getElementById('img-top').add.classList ='margin-endscreen';
+    } else {                // Show next question
+           let percent = (currentQuestion +1) / questions.length;
+           percent = percent * 100; 
+        document.getElementById('progress-bar').style = `width: ${percent}%;`;
+
         let thisQuestion = questions[currentQuestion];
         document.getElementById('questionText').innerHTML = thisQuestion['question'];
         document.getElementById('answer1').innerHTML = thisQuestion['answer_1'];
@@ -236,8 +241,16 @@ function resetAnswerButtons() {
 
 function endResult() {
     document.getElementById('rightAnswers').innerHTML = rightAnswers;
-    document.getElementById('allQuestions').innerHTML = questions.length;
-    document.getElementById('img-top').src = 'img/animals/win';  
+    document.getElementById('allQuestions').innerHTML = questions.length; 
+}
+
+function newGame() {
+    currentQuestion = 0;
+    rightAnswers = 0;
+    document.getElementById('img-top').src = 'img/animals/Animals.jpg';
+    init();
+    document.getElementById('endscreen').style = 'display: none';
+    document.getElementById('questionBody').style = '';
 }
 
 
