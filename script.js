@@ -174,8 +174,15 @@ let questions = [
 
 let currentQuestion = 0;
 let rightAnswers = 0;
+let AUDIO_SUCCESS = new Audio('audio/rightAnswer.mp3');
+let AUDIO_FAIL = new Audio('audio/wrongAnswer.mp3');
+let AUDIO_WIN = new Audio('audio/audioTrack.mp3');
+
+
 
 function init() {
+    AUDIO_WIN.pause();
+    document.getElementById('img-main').innerHTML = '<img id="img-top" src="img/quiz.png" class="card-img-top">';
     document.getElementById('numberQuestions').innerHTML = questions.length;
     showQuestion();
 
@@ -186,9 +193,11 @@ function showQuestion() {  //Show endscreen
     if (currentQuestion >= questions.length) {
         document.getElementById('endscreen').style = '';
         document.getElementById('questionBody').style = 'display: none';
-       endResult();
+       endResult(); 
+       AUDIO_WIN.play();
        document.getElementById('img-top').src = 'img/animals/win.png';
        document.getElementById('img-top').add.classList ='margin-endscreen';
+      
     } else {                // Show next question
            let percent = (currentQuestion +1) / questions.length;
            percent = percent * 100; 
@@ -212,10 +221,12 @@ function answer(selection) {
         document.getElementById(selection).parentNode.classList.add('bg-success');
         document.getElementById('img-main').innerHTML = `<img class="img-animal" src="${thisQuestion['img']}">`;
         rightAnswers++;
+        AUDIO_SUCCESS.play();
     }
     else {
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+        AUDIO_FAIL.play();
     }
     document.getElementById('nextQuestion').disabled = false;
 }
@@ -236,7 +247,7 @@ function resetAnswerButtons() {
         document.getElementById(`answer${i}`).parentNode.classList.remove('bg-success');
         document.getElementById(`answer${i}`).parentNode.classList.remove('bg-danger');
     }
-    document.getElementById('img-main').innerHTML = '<img id="img-top" src="img/quiz-2058883_1280.png" class="card-img-top">';
+    document.getElementById('img-main').innerHTML = '<img id="img-top" src="img/quiz.png" class="card-img-top">';
 }
 
 function endResult() {
