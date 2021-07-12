@@ -262,6 +262,40 @@ function newGame() {
     init();
     document.getElementById('endscreen').style = 'display: none';
     document.getElementById('questionBody').style = '';
+    
+}
+
+function showCardBody() {
+ document.getElementById('questionBody').innerHTML = `<h5 class="card-title" id="questionText">Frage</h5>
+    <div class="card mb-2 quiz-answer-card">
+        <div class="card-body" id="answer1" onclick="answer('answer1')">
+            Antwort
+        </div>
+    </div>
+    <div class="card mb-2 quiz-answer-card " onclick="answer('answer2')">
+        <div class="card-body" id="answer2">
+            Antwort
+        </div>
+    </div>
+    <div class="card mb-2 quiz-answer-card" onclick="answer('answer3')">
+        <div class="card-body" id="answer3">
+            Antwort
+        </div>
+    </div>
+    <div class="card mb-2 quiz-answer-card" onclick="answer('answer4')">
+        <div class="card-body" id="answer4">
+            Antwort
+        </div>
+    </div>
+    <div class="question-footer">
+        <span>
+            <b id="count-question">1</b> von <b id="numberQuestions">5</b> Fragen
+        </span> <br>
+        <div class="new-game">
+        <button class="btn btn-primary" id="nextQuestion" onclick="nextQuestion()" disabled>Nächste
+            Frage</button></div>
+    </div> `;
+    newGame();
 }
 
 
