@@ -177,15 +177,15 @@ let rightAnswers = 0;
 let AUDIO_SUCCESS = new Audio('audio/rightAnswer.mp3');
 let AUDIO_FAIL = new Audio('audio/wrongAnswer.mp3');
 let AUDIO_WIN = new Audio('audio/audioTrack.mp3');
+let AUDIO_BUTTON = new Audio('audio/klickButton.mp3');
 
 
 
 function init() {
     AUDIO_WIN.pause();
-    document.getElementById('img-main').innerHTML = '<img id="img-top" src="img/quiz.png" class="card-img-top">';
+    document.getElementById('img-main').innerHTML = '<img id="img-top" src="img/Animals.jpg" class="card-img-top">';
     document.getElementById('numberQuestions').innerHTML = questions.length;
     showQuestion();
-
 }
 
 
@@ -222,10 +222,11 @@ function answer(selection) {
         document.getElementById('img-main').innerHTML = `<img class="img-animal" src="${thisQuestion['img']}">`;
         rightAnswers++;
         AUDIO_SUCCESS.play();
+       
     }
     else {
-        document.getElementById(selection).parentNode.classList.add('bg-danger');
-        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+         document.getElementById(selection).parentNode.classList.add('bg-danger');
+        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success' , 'animation');
         AUDIO_FAIL.play();
     }
     document.getElementById('nextQuestion').disabled = false;
@@ -233,6 +234,7 @@ function answer(selection) {
 
 
 function nextQuestion() {
+    AUDIO_BUTTON.play();
     currentQuestion++;
     resetAnswerButtons();
     showQuestion();
@@ -256,6 +258,7 @@ function endResult() {
 }
 
 function newGame() {
+    AUDIO_BUTTON.play();
     currentQuestion = 0;
     rightAnswers = 0;
     document.getElementById('img-top').src = 'img/animals/Animals.jpg';
