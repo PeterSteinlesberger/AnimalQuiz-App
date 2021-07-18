@@ -35,7 +35,7 @@ let questions = [
         "right_answer": 3,
         "img": "img/animals/kangaroo.jpg"
     },
-    {
+   {
         "question": "5. Wie heißen die schwarzweiß gestreiften Verwandten des Pferdes?",
         "answer_1": "Esel",
         "answer_2": "Zebra",
@@ -170,7 +170,7 @@ let questions = [
         "right_answer": 1,
         "img": "img/animals/cow.jpg"
     }
-];
+]; 
 let currentQuestion = 0;
 let rightAnswers = 0;
 let AUDIO_SUCCESS = new Audio('audio/rightAnswer.mp3');
@@ -182,17 +182,18 @@ let AUDIO_BUTTON = new Audio('audio/klickButton.mp3');
 function init() {  //Initialized the landing page
     AUDIO_WIN.pause();
     document.getElementById('img-main').innerHTML = '<img id="img-top" src="img/Animals.jpg" class="card-img-top">';
-    document.getElementById('numberQuestions').innerHTML = questions.length;
-    showQuestion();
+   document.getElementById('numberQuestions').innerHTML = questions.length;
+   showQuestion();
 }
 
 
-function showQuestion() {  // sohw next question or endscreen
-    if (currentQuestion == questions.length) {
-        showEndscreen();      //Show endscreen
+function showQuestion() {  // Show next question or endscreen
+    if (currentQuestion >= questions.length) {
+        showEndscreen();   //Show endscreen
+             
     } else {                // Show next question
-      progressBar();        // Show updated progressbar
-      showNewQuestionAndAnswers();  //Sohw next Question
+      showNewQuestionAndAnswers();      //Sohw next Question
+      progressBar();     // Show updated progressbar
     }
 }
 
@@ -202,7 +203,6 @@ function showEndscreen() {    //Show endscreen
     document.getElementById('endscreen').style = '';
     document.getElementById('questionBody').style = 'display: none';
    document.getElementById('img-top').src = 'img/animals/win.png';
-   document.getElementById('img-top').add.classList ='margin-endscreen';
    endResult();               // Show how much questions was right
 }
 
@@ -228,13 +228,13 @@ function answer(selection) {     //checked if the answer is right or false
     let thisQuestion = questions[currentQuestion];
     let idOfRightAnswer = `answer${thisQuestion['right_answer']}`;
 
-    if (selection.slice(-1) == thisQuestion['right_answer']) {
-        document.getElementById(selection).parentNode.classList.add('bg-success');
-        document.getElementById('img-main').innerHTML = `<img class="img-animal" src="${thisQuestion['img']}">`;
-        rightAnswers++;
-        AUDIO_SUCCESS.play();
-    } else {
-         document.getElementById(selection).parentNode.classList.add('bg-danger');
+    if (selection.slice(-1) == thisQuestion['right_answer']) {    //right answer - update HTML + update sum of right answers
+    document.getElementById(selection).parentNode.classList.add('bg-success');
+    document.getElementById('img-main').innerHTML = `<img class="img-animal" src="${thisQuestion['img']}">`;
+    rightAnswers++;
+    AUDIO_SUCCESS.play();
+    } else {                 //wrong answer - update HTML 
+        document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success' , 'animation');
         AUDIO_FAIL.play();
     }
