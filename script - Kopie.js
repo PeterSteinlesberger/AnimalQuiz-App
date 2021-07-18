@@ -171,6 +171,7 @@ let questions = [
         "img": "img/animals/cow.jpg"
     }
 ];
+
 let currentQuestion = 0;
 let rightAnswers = 0;
 let AUDIO_SUCCESS = new Audio('audio/rightAnswer.mp3');
@@ -179,7 +180,9 @@ let AUDIO_WIN = new Audio('audio/audioTrack.mp3');
 let AUDIO_BUTTON = new Audio('audio/klickButton.mp3');
 
 
-function init() {  //Initialized the landing page
+
+
+function init() {
     AUDIO_WIN.pause();
     document.getElementById('img-main').innerHTML = '<img id="img-top" src="img/Animals.jpg" class="card-img-top">';
     document.getElementById('numberQuestions').innerHTML = questions.length;
@@ -187,44 +190,34 @@ function init() {  //Initialized the landing page
 }
 
 
-function showQuestion() {  // sohw next question or endscreen
+function showQuestion() {  //Show endscreen
     if (currentQuestion == questions.length) {
-        showEndscreen();      //Show endscreen
+        document.getElementById('endscreen').style = '';
+      //  document.getElementById('endscreen').style = 'display: none';
+        
+        document.getElementById('questionBody').style = 'display: none';
+       endResult(); 
+       AUDIO_WIN.play();
+       document.getElementById('img-top').src = 'img/animals/win.png';
+       document.getElementById('img-top').add.classList ='margin-endscreen';
+      
     } else {                // Show next question
-      progressBar();        // Show updated progressbar
-      showNewQuestionAndAnswers();  //Sohw next Question
-    }
-}
-
-
-function showEndscreen() {    //Show endscreen
-    AUDIO_WIN.play();
-    document.getElementById('endscreen').style = '';
-    document.getElementById('questionBody').style = 'display: none';
-   document.getElementById('img-top').src = 'img/animals/win.png';
-   document.getElementById('img-top').add.classList ='margin-endscreen';
-   endResult();               // Show how much questions was right
-}
-
-
-function progressBar() {     // update and show the progressbar
-    let percent = (currentQuestion +1) / questions.length;
+           let percent = (currentQuestion +1) / questions.length;
            percent = percent * 100; 
         document.getElementById('progress-bar').style = `width: ${percent}%;`;
+
+        let thisQuestion = questions[currentQuestion];
+        document.getElementById('questionText').innerHTML = thisQuestion['question'];
+        document.getElementById('answer1').innerHTML = thisQuestion['answer_1'];
+        document.getElementById('answer2').innerHTML = thisQuestion['answer_2'];
+        document.getElementById('answer3').innerHTML = thisQuestion['answer_3'];
+        document.getElementById('answer4').innerHTML = thisQuestion['answer_4'];
+    }
+
 }
 
-
-function showNewQuestionAndAnswers() {    //Sohw next Question
-    let thisQuestion = questions[currentQuestion];
-    document.getElementById('questionText').innerHTML = thisQuestion['question'];
-    document.getElementById('answer1').innerHTML = thisQuestion['answer_1'];
-    document.getElementById('answer2').innerHTML = thisQuestion['answer_2'];
-    document.getElementById('answer3').innerHTML = thisQuestion['answer_3'];
-    document.getElementById('answer4').innerHTML = thisQuestion['answer_4'];
-}
-
-
-function answer(selection) {     //checked if the answer is right or false
+function answer(selection) {
+   
     let thisQuestion = questions[currentQuestion];
     let idOfRightAnswer = `answer${thisQuestion['right_answer']}`;
 
@@ -233,7 +226,9 @@ function answer(selection) {     //checked if the answer is right or false
         document.getElementById('img-main').innerHTML = `<img class="img-animal" src="${thisQuestion['img']}">`;
         rightAnswers++;
         AUDIO_SUCCESS.play();
-    } else {
+       
+    }
+    else {
          document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success' , 'animation');
         AUDIO_FAIL.play();
@@ -242,7 +237,7 @@ function answer(selection) {     //checked if the answer is right or false
 }
 
 
-function nextQuestion() {   //shows next question
+function nextQuestion() {
     AUDIO_BUTTON.play();
     currentQuestion++;
     resetAnswerButtons();
@@ -253,8 +248,7 @@ function nextQuestion() {   //shows next question
     document.getElementById('count-question').innerHTML = countQuestion;
 }
 
-
-function resetAnswerButtons() {  //clean up the answerbuttons from added classes
+function resetAnswerButtons() {
     for (let i = 1; i < 5; i++) {
         document.getElementById(`answer${i}`).parentNode.classList.remove('bg-success', 'animation');
         document.getElementById(`answer${i}`).parentNode.classList.remove('bg-danger');
@@ -262,24 +256,23 @@ function resetAnswerButtons() {  //clean up the answerbuttons from added classes
     document.getElementById('img-main').innerHTML = '<img id="img-top" src="img/quiz.png" class="card-img-top">';
 }
 
-
-function endResult() {  //count the right answers, and sum of questions
+function endResult() {
     document.getElementById('rightAnswers').innerHTML = rightAnswers;
     document.getElementById('allQuestions').innerHTML = questions.length; 
 }
 
-
-function newGame() {  //initializes a new game
+function newGame() {
     AUDIO_BUTTON.play();
     currentQuestion = 0;
     rightAnswers = 0;
+   // document.getElementById('img-top').src = 'img/animals/Animals.jpg';
     init();
     document.getElementById('endscreen').style = 'display: none';
     document.getElementById('questionBody').style = '';
 }
 
+function showCardBody() {
 
-function showCardBody() {    //showes the card body
  document.getElementById('questionBody').innerHTML = `<h5 class="card-title" id="questionText">Frage</h5>
     <div class="card mb-2 quiz-answer-card">
         <div class="card-body" id="answer1" onclick="answer('answer1')">
